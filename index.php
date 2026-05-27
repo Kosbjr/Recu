@@ -1,6 +1,16 @@
 <?php
-    // PHP: puedes cambiar el saludo inicial desde servidor
-    $saludoInicial = "Hola 👋 desde PHP";
+    // Array de saludos gestionado por PHP (servidor)
+    $saludos = [
+        "Hola 👋",
+        "Buenos días ☀️",
+        "Buenas tardes 🌇",
+        "Buenas noches 🌙",
+        "¡Qué tal! 😄",
+        "Bienvenido 🚀"
+    ];
+
+    // PHP elige uno aleatorio
+    $saludo = $saludos[array_rand($saludos)];
 ?>
 
 <!DOCTYPE html>
@@ -55,31 +65,16 @@
 <body>
 
 <div class="container">
-    <!-- PHP imprime el saludo inicial -->
-    <h1 id="saludo"><?php echo $saludoInicial; ?></h1>
 
-    <p>Esta página ahora usa PHP + JavaScript</p>
+    <!-- SALUDO GENERADO POR PHP -->
+    <h1><?php echo $saludo; ?></h1>
 
-    <button onclick="cambiarSaludo()">Cambiar saludo</button>
+    <p>El saludo lo gestiona PHP en el servidor</p>
+
+    <!-- Botón que recarga la página -->
+    <button onclick="location.reload()">Nuevo saludo</button>
+
 </div>
-
-<script>
-    const saludos = [
-        "Hola 👋",
-        "Buenos días ☀️",
-        "Buenas tardes 🌇",
-        "Buenas noches 🌙",
-        "¡Qué tal! 😄",
-        "Bienvenido 🚀"
-    ];
-
-    let index = 0;
-
-    function cambiarSaludo() {
-        index = (index + 1) % saludos.length;
-        document.getElementById("saludo").innerText = saludos[index];
-    }
-</script>
 
 </body>
 </html>
