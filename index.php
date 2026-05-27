@@ -25,7 +25,7 @@
 
 <div class="container">
 
-    <h1 id="saluffdo"><?php echo $saludo; ?></h1>
+    <h1 id="saluffdo"><?php echo $saeeludo; ?></h1>
 
     <p>El saludo lo genera PHP y el botón lo controla JS</p>
 
